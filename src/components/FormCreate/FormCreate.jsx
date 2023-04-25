@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
+import { useHistory } from "react-router-dom";
 import './FormCreate.css';
 
 import axios from 'axios';
 export default function CreateForm(){
+  const history = useHistory();
 
   const [temperaments, setTemperaments] = useState([]);
   const [newDog, setNewDog] = useState({
@@ -19,7 +20,7 @@ export default function CreateForm(){
 
   async function fetchTemperaments() {
     try {
-      const response = (await axios.get('http://localhost:3001/temperament')).data;
+      const response = (await axios.get('/temperament')).data;
       console.log(response);
       // Obtener temperamentos de cada raza de perro
       //const breeds = Object.values(response);
@@ -61,8 +62,21 @@ export default function CreateForm(){
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //axios.post("http://localhost:3001/dogs",newDog)
-    axios.post("http://localhost:3001/dogs",{
+    //axios.post("/dogs",newDog)
+    // axios.post("/dogs",{
+    //   "name":newDog.name,
+    //   "image":newDog.image,
+    //   "height": newDog.minheight+' - '+newDog.maxheight,
+    //   "weight":newDog.minweight+' - '+newDog.maxweight,
+    //   "lifeSpan":newDog.lifeSpan,
+    //   "temperament":newDog.temperaments
+    // })
+    
+    // .then(res=>alert(res))
+    
+    // Aquí puedes enviar los datos del nuevo perro al servidor
+    // usando la función dispatch de Redux o cualquier otra forma
+    axios.post("/dogs",{
       "name":newDog.name,
       "image":newDog.image,
       "height": newDog.minheight+' - '+newDog.maxheight,
@@ -70,12 +84,14 @@ export default function CreateForm(){
       "lifeSpan":newDog.lifeSpan,
       "temperament":newDog.temperaments
     })
-    
-    .then(res=>alert(res))
-    
-    // Aquí puedes enviar los datos del nuevo perro al servidor
-    // usando la función dispatch de Redux o cualquier otra forma
-    
+    .then(() => {
+      alert("Perro agregado exitosamente");
+      history.push("/");
+    })
+    .catch((error) => {
+      alert("Error al agregar perro: " + error.message);
+    });
+
 
     // Reiniciar el estado para limpiar el formulario
     setNewDog({
