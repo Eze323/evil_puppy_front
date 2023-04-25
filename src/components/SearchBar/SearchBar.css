@@ -1,0 +1,17 @@
+.BotonBuscar{
+font-family: 'rym-regular';
+color:whitesmoke;
+width:180px!important;
+margin-left:15px;
+padding: 5px;
+background-color:#a7d529ad;
+border-radius: 10px;
+width: 120px;
+-webkit-box-shadow: 5px 5px 15px 1px #000000; 
+box-shadow: 5px 5px 15px 1px #000000;
+cursor:pointer; 
+}
+
+.contentSearchBar{
+    border:1px solid #a7d529ad;
+}

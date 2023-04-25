@@ -1,0 +1,46 @@
+/*@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.googleapis.com/css2?family=Montserrat);
+}*/
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'BreeSerif';
+  src: url(https://fonts.google.com/specimen/Bree+Serif);
+}
+
+body {
+  color: #fff;
+  text-shadow:2px 2px 15px #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*color: hsl(0, 0%, 100%);*/
+  background-image: radial-gradient(
+    circle,
+    rgba(152, 11, 238, 1) 0%,
+    rgba(118, 15, 181, 1) 35%,
+    rgba(58, 13, 85, 1) 100%
+  );
+
+}
+
+code {
+  font-family: 'Montserrat','BreeSerif', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.texto-borde {
+  -webkit-text-stroke: 2px black;
+  /*color: transparent; */
+}

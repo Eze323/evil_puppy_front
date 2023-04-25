@@ -1,0 +1,23 @@
+
+.ContieneFiguritas{
+   padding-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.ContieneTarjeta{
+      margin-top: 15px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;  
+}
+
