@@ -62,20 +62,7 @@ export default function CreateForm(){
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //axios.post("/dogs",newDog)
-    // axios.post("/dogs",{
-    //   "name":newDog.name,
-    //   "image":newDog.image,
-    //   "height": newDog.minheight+' - '+newDog.maxheight,
-    //   "weight":newDog.minweight+' - '+newDog.maxweight,
-    //   "lifeSpan":newDog.lifeSpan,
-    //   "temperament":newDog.temperaments
-    // })
-    
-    // .then(res=>alert(res))
-    
-    // Aquí puedes enviar los datos del nuevo perro al servidor
-    // usando la función dispatch de Redux o cualquier otra forma
+
     axios.post("/dogs",{
       "name":newDog.name,
       "image":newDog.image,
@@ -85,7 +72,7 @@ export default function CreateForm(){
       "temperament":newDog.temperaments
     })
   .then(res => {
-  alert(res);
+  //alert(res);
   navigate("/home");
 })
 .catch(error => {
