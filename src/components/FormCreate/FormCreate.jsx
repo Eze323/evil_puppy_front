@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import './FormCreate.css';
 
 import axios from 'axios';
 export default function CreateForm(){
-  const history = useHistory();
+  const navigate = useNavigate()
 
   const [temperaments, setTemperaments] = useState([]);
   const [newDog, setNewDog] = useState({
@@ -84,13 +84,13 @@ export default function CreateForm(){
       "lifeSpan":newDog.lifeSpan,
       "temperament":newDog.temperaments
     })
-    .then(() => {
-      alert("Perro agregado exitosamente");
-      history.push("/");
-    })
-    .catch((error) => {
-      alert("Error al agregar perro: " + error.message);
-    });
+  .then(res => {
+  alert(res);
+  navigate("/home");
+})
+.catch(error => {
+  console.log(error);
+});
 
 
     // Reiniciar el estado para limpiar el formulario
