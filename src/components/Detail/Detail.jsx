@@ -23,7 +23,7 @@ import axios from "axios";
   
     async function fetchDogById(idRaza) {
       try {
-        const response =await axios.get(`http://localhost:3001/dogs/${idRaza}`); 
+        const response =await axios.get(`/dogs/${idRaza}`); 
         console.log(response);
         if (response.status===200) {
           setDogBreeds(response.data);
