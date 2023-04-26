@@ -4,7 +4,7 @@ import About from './components/About/About';
 import FormCreate from './components/FormCreate/FormCreate';
 import Detail from './components/Detail/Detail';
 import LandingPage from './components/LandingPage/LandingPage';
-import Music from './music/palaseleccion.mp3'
+import Music from './music/palaseleccion.mp3';
 
 import './App.css';
 import Nav from './components/Nav/Nav.jsx';
