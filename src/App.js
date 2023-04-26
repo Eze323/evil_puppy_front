@@ -4,6 +4,7 @@ import About from './components/About/About';
 import FormCreate from './components/FormCreate/FormCreate';
 import Detail from './components/Detail/Detail';
 import LandingPage from './components/LandingPage/LandingPage';
+import Music from './music/palaseleccion.mp3'
 
 import './App.css';
 import Nav from './components/Nav/Nav.jsx';
@@ -30,6 +31,9 @@ function App() {
   return (
     
     <div className="App">
+      <audio autoPlay loop>
+        <source src={Music} type='audio/mp3'/>
+      </audio>
       
       {location.pathname!=='/'&& <Nav logout={logout}/>}
       <Routes>
