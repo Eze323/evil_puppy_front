@@ -31,9 +31,9 @@ function App() {
   return (
     
     <div className="App">
-      <audio autoPlay loop>
+      {/* <audio autoPlay loop>
         <source src={Music} type='audio/mp3'/>
-      </audio>
+      </audio> */}
       
       {location.pathname!=='/'&& <Nav logout={logout}/>}
       <Routes>
