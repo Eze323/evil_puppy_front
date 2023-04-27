@@ -10,7 +10,7 @@ import App from './App';
  import axios from 'axios';
 
  //axios.defaults.baseURL= 'http://localhost:3001';
- axios.defaults.baseURL= 'http://evilpuppyback-evil-puppy.up.railway.app/';
+ axios.defaults.baseURL= 'https://evilpuppyback-evil-puppy.up.railway.app/';
 
 
 ReactDOM.render(
