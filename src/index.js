@@ -11,6 +11,7 @@ import App from './App';
 
  //axios.defaults.baseURL= 'http://localhost:3001';
  axios.defaults.baseURL= 'https://backend-qog4.onrender.com/';
+ export const ruthApp='https://backend-qog4.onrender.com/';
 
 
 ReactDOM.render(

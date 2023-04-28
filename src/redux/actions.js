@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ruthApp } from '..';
 export const ADD_DOG='ADD_DOG';
 export const DELETE_DOG='DELETE_DOG';
 export const GET_DOGS='GET_DOGS';
@@ -25,7 +26,7 @@ export function deleteDog(id){
 export const getDogs=()=>{
     //traigo todos los dogs de la base-api
         return async function (dispatch) {
-          const apiData = await axios.get("/dogs");
+          const apiData = await axios.get(`${ruthApp}/dogs`);
           
           const dogs= apiData.data;
 
@@ -40,7 +41,7 @@ export const getDogs=()=>{
 export function getDogsByName(name){
   //busca todos los dogs por nombre
   return async function (dispatch) {
-    const response = await axios.get(`/dogs?name=${name}`);
+    const response = await axios.get(`${ruthApp}/dogs?name=${name}`);
     return dispatch({
       type: GET_DOGBYNAME,
       payload: response.data,
@@ -51,7 +52,7 @@ export function getDogsByName(name){
 export const getTemperaments=()=>{
     
       return async function (dispatch) {
-        const response = await axios.get("/temperaments");
+        const response = await axios.get(`${ruthApp}/temperaments`);
         return dispatch({
           type: GET_TEMPERAMENTS,
           payload: response.data,
