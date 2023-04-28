@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
+/*"start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",*/
  import { BrowserRouter } from 'react-router-dom';
  import { Provider } from 'react-redux';
 // // eslint-disable-next-line
