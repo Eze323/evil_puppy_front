@@ -7,6 +7,7 @@ import { getDogs} from "../../redux/actions";
 import SearchBar from "../SearchBar/SearchBar";
 import { Paginado } from "../Paginado/Paginado";
 import imgLoading from "../../img/pnghuella.png";
+import FilterBar from "../FilterBar/FilterBar";
 function Home() {
   //const [dogBreeds, setDogBreeds] = useState([]);
   const [isLoading,setLoading]= useState(true);
@@ -36,6 +37,7 @@ function Home() {
       <h1>Home Page</h1>
       <p>Estoy logueado y nos encontramos en la home</p>
       <SearchBar/>
+      <FilterBar/>
      
       <Paginado paginado={setIndexPage} indexPage={indexPage}  />
       {isLoading?(<p><img src={imgLoading} alt="Loading"/></p>):(<Cards dogBreeds={dogSlice}/>)}
