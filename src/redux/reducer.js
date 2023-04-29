@@ -13,7 +13,8 @@ const rootReducer = (state = initialState, action)=>{
         case GET_DOGS:
             return {
                 ...state,
-                dogBreeds:[...action.payload]
+                dogBreeds:[...action.payload],
+                myDogs:[...action.payload]
             }
         case ADD_DOG:
             const addDog=[...state.dogBreeds,action.payload];
@@ -44,24 +45,24 @@ const rootReducer = (state = initialState, action)=>{
         case FILTER:
             return {
                 ...state,
-                myDogs:state.dogBreeds.filter(e=>e.temperament===action.payload)
+                dogBreeds:state.dogBreeds.filter(e=>e.temperament===action.payload)
             }
         case ORDER:
             let orderDogs;
             if(action.payload==='Ascendente'){
-                orderDogs=state.myDogs.sort((a,b)=>a.name>b.name?1:-1);
+                orderDogs=state.dogBreeds.sort((a,b)=>a.name>b.name?1:-1);
             }
             else{
-                orderDogs=state.myDogs.sort((a,b)=>a.name<b.name?1:-1);
+                orderDogs=state.dogBreeds.sort((a,b)=>a.name<b.name?1:-1);
             }
             return{
                 ...state,
-                myDogs:[...orderDogs]
+                dogBreeds:[...orderDogs]
             }
             case 'RESET':
                 return{
                     ...state,
-                    myDogs:state.dogBreeds
+                    dogBreeds:state.myDogs
                 }
             default:
                 return {...state}

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import {filterCards,orderCards} from "../../redux/actions"
 
 export default function FilterBar(){
   
@@ -17,19 +18,19 @@ export default function FilterBar(){
 
   return(
     <>
-    <h1>Filtro</h1>
-    {/* <ContenedorDeFiltros>
-  <SelectStyle ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
+    <h1>Filter && Order</h1>
+    <div className="ContenedorDeFiltros">
+  <select className="SelectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
       {['Ascendente', 'Descendente'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
-  </SelectStyle>
-  <SelectStyle ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
+  </select>
+  <select className="SelectStyle" ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
       {['Male', 'Female', 'unknown', 'Genderless'].map((e,i) =>(<option value={e} key={i}>{e}</option> ))}
-  </SelectStyle>
+  </select>
 
   <button  value="reset" onClick={handleReset}>
 Reset
   </button>
-  </ContenedorDeFiltros> */}
+  </div>
     </>
   )
 }

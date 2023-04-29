@@ -30,8 +30,10 @@ export default function SearchBar() {
 
   useEffect(() => {}, [searchTerm]);
 
-  return (
+  return (<>
+    
     <div className="ContentSearchBar">
+    <h1>Search bar</h1>
     <input
       type="text"
       placeholder="Search by name..."
@@ -41,5 +43,6 @@ export default function SearchBar() {
     {isLoading && <div>Loading Dogs...</div>}
     
   </div>
+  </>
   );
 }

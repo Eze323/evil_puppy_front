@@ -21,7 +21,7 @@ export default function CreateForm(){
   async function fetchTemperaments() {
     try {
       const response = (await axios.get('/temperament')).data;
-      console.log(response);
+      //console.log(response);
       // Obtener temperamentos de cada raza de perro
       //const breeds = Object.values(response);
  
@@ -30,7 +30,7 @@ export default function CreateForm(){
       console.log('Hubo un problema con la petición Fetch: ' + error.message);
     }
   }
-  console.log(temperaments);
+  //console.log(temperaments);
   useEffect(() => {
     fetchTemperaments();
   }, []);
