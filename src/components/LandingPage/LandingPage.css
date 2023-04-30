@@ -3,7 +3,7 @@
     /*transition: background-image 1s ease-in-out;*/
     background-repeat: no-repeat;
     background-image: fixed;
-    background-image: center;
+    background-position: 27% 20%;
     background-size: cover;
     margin: 0;
     height: 100vh;

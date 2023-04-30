@@ -21,9 +21,7 @@ export default function CreateForm(){
   async function fetchTemperaments() {
     try {
       const response = (await axios.get('/temperament')).data;
-      //console.log(response);
       // Obtener temperamentos de cada raza de perro
-      //const breeds = Object.values(response);
  
       setTemperaments(response);
     } catch (error) {

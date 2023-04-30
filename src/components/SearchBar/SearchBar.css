@@ -13,5 +13,16 @@ cursor:pointer;
 }
 
 .contentSearchBar{
-    border:1px solid #a7d529ad;
+    border:1px solid #585a53ad;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputStyle{
+    margin-top: 1px;
+    height: 25px;
 }

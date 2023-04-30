@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import { useDispatch } from "react-redux";
 import { getDogsByName } from "../../redux/actions";
 import { useEffect } from "react";
-//const URLimage='https://cdn2.thedogapi.com/images/';
+import lupa from '../../img/lupa.png';
 
 export default function SearchBar() {
   const [isLoading,setLoading]= useState(false);
@@ -32,14 +32,16 @@ export default function SearchBar() {
 
   return (<>
     
-    <div className="ContentSearchBar">
-    <h1>Search bar</h1>
-    <input
+    <div className="contentSearchBar">
+    {/* <h1>Search bar</h1> */}
+    <input className="inputStyle"
       type="text"
       placeholder="Search by name..."
       onChange={handleSearch}
     />
-    <button onClick={handleSearchButtonClick}>Search</button>
+    <button onClick={handleSearchButtonClick}>
+      <img src={lupa} alt="Search" width="20px" />
+      </button>
     {isLoading && <div>Loading Dogs...</div>}
     
   </div>
