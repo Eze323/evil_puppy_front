@@ -1,7 +1,9 @@
 .LandingPage{
-    background: url('../../img/fondo.jpg');
+    background: url('../../img/fondo-pantalla-colores.jpg');
     /*transition: background-image 1s ease-in-out;*/
-    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-image: fixed;
+    background-image: center;
     background-size: cover;
     margin: 0;
     height: 100vh;
