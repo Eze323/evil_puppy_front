@@ -51,7 +51,7 @@ export function getDogsByName(name){
 export const getTemperaments=()=>{
     
       return async function (dispatch) {
-        const response = await axios.get(`temperaments`);
+        const response = await axios.get(`/temperament`);
         return dispatch({
           type: GET_TEMPERAMENTS,
           payload: response.data,

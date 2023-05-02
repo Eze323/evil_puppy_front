@@ -17,8 +17,7 @@ export function Card(props) {
          </LazyLoad>
          </div>
          
-               <h2 className='name'>{props.name} : 
-         {props.temperament}</h2>
+               <h2 className='name'>{props.name} - {props.temperament}</h2>
          </Link>
          
          

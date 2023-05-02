@@ -40,20 +40,27 @@ const rootReducer = (state = initialState, action)=>{
         case GET_TEMPERAMENTS:
             return{
                 ...state,
-
+                temperaments:[...action.payload]
             }       
-        case FILTER:
-            return {
-                ...state,
-                dogBreeds:state.dogBreeds.filter(e=>e.temperament===action.payload)
-            }
+            case FILTER:
+                return {
+                  ...state,
+                  dogBreeds: state.dogBreeds.filter(e => e.temperament && e.temperament.includes(action.payload))
+                }
+              
+
         case ORDER:
             let orderDogs;
-            if(action.payload==='Ascendente'){
+            if(action.payload==='Race A-Z'){
                 orderDogs=state.dogBreeds.sort((a,b)=>a.name>b.name?1:-1);
             }
-            else{
+            else if(action.payload==='Race Z-A'){
                 orderDogs=state.dogBreeds.sort((a,b)=>a.name<b.name?1:-1);
+            }
+            else if(action.payload==='Weight A-Z'){
+                orderDogs=state.dogBreeds.sort((a,b)=>a.weight>b.weight?1:-1);
+            }else{
+                orderDogs=state.dogBreeds.sort((a,b)=>a.weight<b.weight?1:-1);
             }
             return{
                 ...state,

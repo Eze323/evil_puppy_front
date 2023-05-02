@@ -1,13 +1,25 @@
-import { useRef } from "react";
-import { useDispatch } from "react-redux";
-import {filterCards,orderCards} from "../../redux/actions"
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {filterCards,orderCards,getTemperaments} from "../../redux/actions"
 
 export default function FilterBar(){
   
   const dispatch = useDispatch();
   const filter=useRef(null);
   const order=useRef(null);
+  const filterTemperaments= useSelector(state => state.temperaments);
+
+  useEffect(() => {
+    dispatch(getTemperaments());
+  }, [dispatch]);
   
+  //console.log(filterTemperaments);
+  
+  const temperamentOptions = filterTemperaments.map((temperament, index) => (
+    <option key={temperament.id} value={temperament.name}>{temperament.name}</option>
+  ));
+console.log(temperamentOptions);
+
   function handleReset(e){
     dispatch({type:'RESET'});
     filter.current.value="";
@@ -18,14 +30,23 @@ export default function FilterBar(){
 
   return(
     <>
-    <h1>Filter && Order</h1>
+    <h1>Filter & Order</h1>
     <div className="ContenedorDeFiltros">
+      <label>Order by: </label>
   <select className="SelectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
-      {['Ascendente', 'Descendente'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
+      {['Race A-Z', 'Race Z-A','Weight A-Z', 'Weight Z-A'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
   </select>
+  <br></br>
+  
+  <label>Filter by: </label>
   <select className="SelectStyle" ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
-      {['Male', 'Female', 'unknown', 'Genderless'].map((e,i) =>(<option value={e} key={i}>{e}</option> ))}
+      {temperamentOptions}
   </select>
+  
+{/* <label>Filter by: </label>
+<select className="SelectStyle" ref={filter} onChange={(e) => dispatch(filterCards({filterTemperaments: e.target.value }))}>
+  {temperamentOptions}
+</select> */}
 
   <button  value="reset" onClick={handleReset}>
 Reset
