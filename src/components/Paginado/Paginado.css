@@ -19,6 +19,9 @@
      border: none;
      border-radius: 5px;
 }
+.btnLeft:hover {
+    background-color: #00192e;
+  }
 
 .btnRight{
     background-color: #013660;
@@ -32,3 +35,6 @@
      border: none;
      border-radius: 5px;
 }
+.btnRight:hover {
+    background-color: #00192e;
+  }
