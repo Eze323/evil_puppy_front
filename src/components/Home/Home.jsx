@@ -16,7 +16,7 @@ function Home() {
   
   
   // eslint-disable-next-line
-  const [numPage, setNumPage] = useState(20);
+  const [numPage, setNumPage] = useState(8);
   // eslint-disable-next-line
   const [indexPage, setIndexPage] = useState(1);
   
@@ -36,6 +36,7 @@ function Home() {
     <div className="Home">
       <h1>Home Page</h1>
       <span className="spanDescription">Welcome to our website about dog breeds. Here you will find detailed information about different breeds of dogs, including their characteristics</span>
+      
       <SearchBar/>
       <FilterBar/>
      

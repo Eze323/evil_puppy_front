@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import './FilterBar.css';
 import {filterCards,orderCards,getTemperaments} from "../../redux/actions"
 
 export default function FilterBar(){
@@ -29,30 +30,26 @@ console.log(temperamentOptions);
 
 
   return(
-    <>
+    <div className="contentFilter">
     <h1>Filter & Order</h1>
     <div className="ContenedorDeFiltros">
       <label>Order by: </label>
-  <select className="SelectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
+  <select className="selectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
       {['Race A-Z', 'Race Z-A','Weight A-Z', 'Weight Z-A'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
   </select>
   <br></br>
   
   <label>Filter by: </label>
-  <select className="SelectStyle" ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
+  <select className="selectStyle" ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
       {temperamentOptions}
   </select>
   
-{/* <label>Filter by: </label>
-<select className="SelectStyle" ref={filter} onChange={(e) => dispatch(filterCards({filterTemperaments: e.target.value }))}>
-  {temperamentOptions}
-</select> */}
 
-  <button  value="reset" onClick={handleReset}>
+  <button className="btnReset"  value="reset" onClick={handleReset}>
 Reset
   </button>
   </div>
-    </>
+    </div>
   )
 }
 

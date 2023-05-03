@@ -39,7 +39,7 @@ export default function SearchBar() {
       placeholder="Search by name..."
       onChange={handleSearch}
     />
-    <button onClick={handleSearchButtonClick}>
+    <button className="btnSearch" onClick={handleSearchButtonClick}>
       <img src={lupa} alt="Search" width="20px" />
       </button>
     {isLoading && <div>Loading Dogs...</div>}

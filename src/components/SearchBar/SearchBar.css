@@ -1,20 +1,27 @@
-.BotonBuscar{
-font-family: 'rym-regular';
-color:whitesmoke;
-width:180px!important;
+.btnSearch{
 margin-left:15px;
-padding: 5px;
-background-color:#a7d529ad;
-border-radius: 10px;
 width: 120px;
 -webkit-box-shadow: 5px 5px 15px 1px #000000; 
 box-shadow: 5px 5px 15px 1px #000000;
 cursor:pointer; 
+background-color:#41B8A5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+
+
 }
+.btnSearch:hover {
+    background-color: #009987;
+  }
 
 .contentSearchBar{
-    width: 30%;
-    border:1px solid #585a53ad;
+  border: 3px solid #666;
+  background-color: rgb(255 255 255 / 50%);
+  border-radius: 5px;
+  padding: 10px;
+  width: 43%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -24,6 +31,11 @@ cursor:pointer;
 }
 
 .inputStyle{
-    margin-top: 1px;
+    margin-top: 17px;
     height: 25px;
-}
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 96%;
+    margin-bottom: 20px;
+  }
