@@ -2,29 +2,11 @@
 .ContentAbout{
 color: white;
 text-shadow: 1px 1px 2px black;
-/*box-shadow: 5px 5px 15px 1px #000000;*/
-/*border-radius: 20px;*/
-background-image: radial-gradient(
-    circle,
-    rgba(152, 11, 238, 1) 0%,
-    rgba(118, 15, 181, 1) 35%,
-    rgba(58, 13, 85, 1) 100%
-  );
-
+width: 85%;
 }
-/*.ContentAbout::after{
-    background-color:orange;
-    opacity:0.7;
-}*/
 .ContentAbout p{
     font-family:'Montserrat',sans-serif;
     font-size: 25px;
     padding: 20px;
-    background-image: radial-gradient(
-    circle,
-    rgba(152, 11, 238, 1) 0%,
-    rgba(118, 15, 181, 1) 35%,
-    rgba(58, 13, 85, 1) 100%
-  );
 
 }

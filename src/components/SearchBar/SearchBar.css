@@ -13,6 +13,7 @@ cursor:pointer;
 }
 
 .contentSearchBar{
+    width: 30%;
     border:1px solid #585a53ad;
     display: flex;
     flex-direction: row;

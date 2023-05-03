@@ -200,7 +200,7 @@ export default function CreateForm(){
         <div className='FormContent'>
             <form onSubmit={handleSubmit}>
             <div className='name'>
-            <label title='name'>raze name: </label>
+            <label title='name'>Breed name: </label>
             <input 
             type="text" 
             name='name' 
@@ -212,7 +212,7 @@ export default function CreateForm(){
             
             </div>
             <div className='image'>
-            <label title='image'>breed image: </label>
+            <label title='image'>Breed image: </label>
             <input 
             type="text" 
             name='image' 
@@ -223,7 +223,7 @@ export default function CreateForm(){
             {!errors.image ? null : <span className='danger'>{errors.image}</span>}
             </div>
             <div className='height'>
-            <label title='minheight'>height: </label>
+            <label title='minheight'>Height: </label>
             <label title='minheight'>min:</label>
             <input 
             type="number" 
@@ -244,7 +244,7 @@ export default function CreateForm(){
             {!errors.maxheight ? null : <span className='danger'>{errors.maxheight}</span>}
             </div>
             <div className='weight'>
-            <label title='minweight'>weight: </label>
+            <label title='minweight'>Weight: </label>
             <label title='minweight'>min:</label>
             <input 
             type="number" 
@@ -265,7 +265,7 @@ export default function CreateForm(){
             {!errors.maxweight ? null : <span className='danger'>{errors.maxweight}</span>}
             </div>
             <div className='lifespan'>
-            <label title='lifespan'>life span: </label>
+            <label title='lifespan'>Life span: </label>
             <input 
             type="number" 
             name='lifeSpan' 
@@ -276,7 +276,7 @@ export default function CreateForm(){
             {!errors.lifeSpan ? null : <span className='danger'>{errors.lifeSpan}</span>}
             </div>
             <div className='temperaments' >
-            <label title='temperaments'>temperaments: </label><br/>
+            <label title='temperaments'>Temperaments: </label><br/>
             <div className='classtemperaments'>
       
             {temperaments.map((temp, index) => (
@@ -293,7 +293,7 @@ export default function CreateForm(){
             </div>
 
 
-            <input type="submit" value="Create" />
+            <button type="submit" value="Create">Create breed</button>
 
             </form>
 

@@ -9,3 +9,44 @@
 .temp{
     width: 150px;
 }
+form {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  form {
+    background-color: #415361;
+    border: 1px solid #ddd;
+    padding: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 96%;
+    margin-bottom: 20px;
+  }
+  button[type="submit"] {
+    background-color:#41B8A5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #009987;
+  }
+
+  .danger{
+    /*color: crimson;*/
+    color: #F79453;
+    font-weight: bold;
+  }
+     
