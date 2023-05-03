@@ -35,7 +35,7 @@ function Home() {
   return (
     <div className="Home">
       <h1>Home Page</h1>
-      <p>Estoy logueado y nos encontramos en la home</p>
+      <span className="spanDescription">Welcome to our website about dog breeds. Here you will find detailed information about different breeds of dogs, including their characteristics</span>
       <SearchBar/>
       <FilterBar/>
      
