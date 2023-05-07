@@ -3,6 +3,7 @@ import {useNavigate } from "react-router-dom";
 import './FormCreate.css';
 
 import axios from 'axios';
+const imgPreviusly="https://i.ebayimg.com/thumbs/images/g/WfsAAOSwVX9kOQd4/s-l300.jpg";
 // eslint-disable-next-line
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const regex = /^[A-Za-z\s]+$/; // Expresión regular para validar que solo haya letras y espacios
@@ -253,7 +254,7 @@ export default function CreateForm(){
             value={newDog.minweight}
             onChange={handleInputChange}
             />
-            {!errors.minheight ? null : <span className='danger'>{errors.minweight}</span>}
+            {!errors.minweight ? null : <span className='danger'>{errors.minweight}</span>}
              <label title='maxweight'>max: </label>
             <input 
             type="number" 
@@ -282,7 +283,7 @@ export default function CreateForm(){
             {temperaments.map((temp, index) => (
                 <label key={index} className='temp'>
                    
-                {temp.name}<input type="checkbox" name={temp.id} checked={newDog.temperaments.includes(temp.id)} value={temp.id} onChange={handleTemperamentsChange} />
+                <input type="checkbox" name={temp.id} checked={newDog.temperaments.includes(temp.id)} value={temp.id} onChange={handleTemperamentsChange} />{temp.name}
                 
                 </label>
                 
@@ -296,6 +297,16 @@ export default function CreateForm(){
             <button type="submit" value="Create">Create breed</button>
 
             </form>
+            <div className='cardPreviusly'>
+            <span className='characteristicPreviusly'>Preview</span>
+              <span className='characteristicPreviusly'>{newDog.name}</span>
+              <span className='characteristicPreviusly'><img src={newDog.image?newDog.image:imgPreviusly } alt={newDog.name} width="100px" /></span>
+              <span className='characteristicPreviusly'>Height: {newDog.minheight}-{newDog.maxheight}</span>
+              <span className='characteristicPreviusly'>Weight: {newDog.minweight}-{newDog.maxweight} </span>
+              <span className='characteristicPreviusly'>Life Span: {newDog.lifeSpan}</span>
+
+
+            </div>
 
         </div>
         </div>

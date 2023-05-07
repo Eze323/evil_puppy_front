@@ -3,15 +3,15 @@
   background-color: rgb(255 255 255 / 50%);
   border-radius: 5px;
   padding: 10px;
-  width: 43%;
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 }
-.contentFilter h1{  color: #402901;}
+.contentFilter h1{  color: #161919;}
+.contentFilter label{ color: #161919;}
 .selectStyle{
     padding: 10px;
     border: 1px solid #ddd;
@@ -30,4 +30,13 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    }
+    .ContenedorDeFiltros{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 20px;
+      gap: 20px;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
     }

@@ -8,26 +8,32 @@
 }
 .temp{
     width: 150px;
+    text-align: left;
 }
 form {
     max-width: 700px;
     margin: 0 auto;
   }
   form {
-    background-color: #415361;
-    border: 1px solid #ddd;
+    /*background-color: #415361;
+    border: 1px solid #ddd;*/
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    background-color:#415361cf;
+    border-radius: 15px;
   }
   label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    
   }
   
   form input[type="text"], input[type="number"] {
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 18px;
     width: 96%;
     margin-bottom: 20px;
   }
@@ -48,5 +54,27 @@ form {
     /*color: crimson;*/
     color: #F79453;
     font-weight: bold;
+  }
+  .cardPreviusly{
+    position: fixed;
+    top: 43%;
+    right: 50px;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    background-color:#415361cf;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* otros estilos aquí */
+  }
+  .characteristicPreviusly{
+    padding-bottom:10px;
   }
      

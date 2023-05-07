@@ -10,10 +10,13 @@ import imgLoading from "../../img/pnghuella.png";
 import FilterBar from "../FilterBar/FilterBar";
 function Home() {
   //const [dogBreeds, setDogBreeds] = useState([]);
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const [isLoading,setLoading]= useState(true);
   const dogBreeds = useSelector((state) => state.dogBreeds);
   const dispatch = useDispatch();
-  
+  function toggleSearchBar() {
+    setShowSearchBar(!showSearchBar);
+  }
   
   // eslint-disable-next-line
   const [numPage, setNumPage] = useState(8);
@@ -37,8 +40,11 @@ function Home() {
       <h1>Home Page</h1>
       <span className="spanDescription">Welcome to our website about dog breeds. Here you will find detailed information about different breeds of dogs, including their characteristics</span>
       
-      <SearchBar/>
-      <FilterBar/>
+      <button onClick={toggleSearchBar}>Mostrar/ocultar barra de búsqueda</button>
+      <div className="menusearchfilter">
+     {showSearchBar && <SearchBar/>} 
+      {showSearchBar && <FilterBar/>} 
+      </div>
      
       <Paginado paginado={setIndexPage} indexPage={indexPage}  />
       {isLoading?(<p><img src={imgLoading} alt="Loading"/></p>):(<Cards dogBreeds={dogSlice}/>)}

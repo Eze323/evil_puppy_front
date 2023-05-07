@@ -45,20 +45,20 @@ import axios from "axios";
   
     return (
       <div className="ContainerDetail">
-        {console.log(dogBreeds)}
+        
         {isLoading ? (
           <p><img src={imgLoading} alt="Loading"/></p> // mensaje de carga mientras se espera la respuesta
         ) : (
           <>
-            <div className="ContainerCharacteristics">
-              <h2>Name: {dogBreeds.name}</h2>
-              <h5>Temperaments: {dogBreeds.temperament}</h5>
-              <h5>Height: {dogBreeds.height}</h5>
-              <h5>Weight: {dogBreeds.weight}</h5>
-              <h5>Life span: {dogBreeds.lifeSpan}</h5> 
-            </div>
             <div className="ContainerImage">
               <img className="imageCard" src={`${dogBreeds.image}`} alt={dogBreeds.name} />
+            </div>
+            <div className="ContainerCharacteristics">
+              <h2>Name: {dogBreeds.name}</h2>
+              <span>Temperaments: {dogBreeds.temperament}</span>
+              <span>Height: {dogBreeds.height}</span>
+              <span>Weight: {dogBreeds.weight}</span>
+              <span>Life span: {dogBreeds.lifeSpan}</span> 
             </div>
             <div>
               <button className="btnClose btn btn1" onClick={() => navigate("/home")}>Back Home</button>

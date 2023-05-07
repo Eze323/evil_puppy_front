@@ -17,17 +17,22 @@ background-color:#41B8A5;
   }
 
 .contentSearchBar{
+  
+    /* otros estilos */
+  transition: all 0.3s ease-in-out;
+  
   border: 3px solid #666;
   background-color: rgb(255 255 255 / 50%);
   border-radius: 5px;
   padding: 10px;
-  width: 43%;
+  width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+    height: 93px;
 }
 
 .inputStyle{

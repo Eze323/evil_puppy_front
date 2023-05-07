@@ -31,13 +31,13 @@ console.log(temperamentOptions);
 
   return(
     <div className="contentFilter">
-    <h1>Filter & Order</h1>
+   
     <div className="ContenedorDeFiltros">
       <label>Order by: </label>
   <select className="selectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
       {['Race A-Z', 'Race Z-A','Weight A-Z', 'Weight Z-A'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
   </select>
-  <br></br>
+  
   
   <label>Filter by: </label>
   <select className="selectStyle" ref={filter} onChange={(e)=>dispatch(filterCards(e.target.value))}>
@@ -45,10 +45,10 @@ console.log(temperamentOptions);
   </select>
   
 
+  </div>
   <button className="btnReset"  value="reset" onClick={handleReset}>
 Reset
   </button>
-  </div>
     </div>
   )
 }
