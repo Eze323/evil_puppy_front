@@ -22,7 +22,11 @@ display: flex;
     transition: all 0.3s ease-in-out;
     margin-bottom: 25px;
 }
-    
+@media (max-width: 767px) {
+  .menusearchfilter {
+    flex-direction: column;
+  }  
+}    
   
   
   .searchbar-hidden {
