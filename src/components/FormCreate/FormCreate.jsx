@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useNavigate } from "react-router-dom";
 import './FormCreate.css';
-import validate from './validation.js';
+import {validate} from './validation.js';
 import axios from 'axios';
 const imgPreviusly="https://i.ebayimg.com/thumbs/images/g/WfsAAOSwVX9kOQd4/s-l300.jpg";
 // eslint-disable-next-line
