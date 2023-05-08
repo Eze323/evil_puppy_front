@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useNavigate } from "react-router-dom";
 import './FormCreate.css';
-import validate from './validation';
+import validate from './validation.js';
 import axios from 'axios';
 const imgPreviusly="https://i.ebayimg.com/thumbs/images/g/WfsAAOSwVX9kOQd4/s-l300.jpg";
 // eslint-disable-next-line
@@ -253,7 +253,7 @@ export default function CreateForm(){
               <span className='characteristicPreviusly'>Weight: {newDog.minweight}-{newDog.maxweight} </span>
               <span className='characteristicPreviusly'>Life Span: {newDog.lifeSpan}</span>
               
-              {creating && <span className='characteristicPreviusly'>Creating race..</span>}
+              {creating && <span className='characteristicPreviusly'>Creating race...</span>}
 
             </div>
 
