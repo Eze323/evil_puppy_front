@@ -1,74 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import {useNavigate } from "react-router-dom";
 import './FormCreate.css';
-
+import validate from './validation';
 import axios from 'axios';
 const imgPreviusly="https://i.ebayimg.com/thumbs/images/g/WfsAAOSwVX9kOQd4/s-l300.jpg";
 // eslint-disable-next-line
-const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-const regex = /^[A-Za-z\s]+$/; // Expresión regular para validar que solo haya letras y espacios
 
-
-export function validate(newDog) {
-
-  let errors={};
-  if (!newDog.name) {
-    errors.name = "Breed name is required";
-  
-} else if (!regex.test(newDog.name)) {
-    errors.name= "Breed name can only contain letters and spaces";
-} else if (newDog.name.length < 3 || newDog.name.length > 50) {
-  errors.name= "Breed name must be between 3 and 50 characters long";
-}
-//errors.name= ""; // La cadena vacía indica que la validación pasó satisfactoriamente
-
-// Expresión regular para validar una URL de imagen
-const imageUrlRegex = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i;
-  
-if(!imageUrlRegex.test(newDog.image)){
-  errors.image = "Please enter a valid image URL";
-}
-if (newDog.minheight==='') {
-    errors.minheight = 'Minimun height is required';
- }
-  if(newDog.minheight>newDog.maxheight){
-    errors.minheight='The minimum height cannot exceed the maximum height';
-  }
-  
-  if (newDog.maxheight==='') {
-    errors.maxheight = 'Maximum height is required';
- }
-  if(newDog.maxheight<newDog.minheight){
-    errors.maxheight='The maximum height cannot be less than the minimum height';
-  }
-
-  if (newDog.minweight==='') {
-    errors.minweight = 'Minimun weight is required';
- }
-  if(newDog.minweight>newDog.maxweight){
-    errors.minweight='The minimum weight cannot exceed the maximum weight';
-  }
-  
-  if (newDog.maxweight==='') {
-    errors.maxweight = 'Maximum weight is required';
- }
-  if(newDog.maxweight<newDog.minweight){
-    errors.maxweight='The maximum weight cannot be less than the minimum height';
-  }
-  
- 
- if (newDog.lifeSpan==='') {
-    errors.lifeSpan = 'Life span is required';
- }
-if(newDog.lifeSpan<0 || newDog.lifeSpan>30){
-  errors.lifeSpan='select consistent life years';
-}
-
-  return errors;
-}
 
 
 export default function CreateForm(){
+  const [creating, setCreating] = useState(false);
   const navigate = useNavigate()
 
   const [temperaments, setTemperaments] = useState([]);
@@ -158,22 +99,29 @@ export default function CreateForm(){
     let errorArray = Object.values(errors);
     if (errorArray.length === 0) {
               setErrors(validate);
-              axios.post("/dogs",{
-                "name":newDog.name,
-                "image":newDog.image,
-                "height": newDog.minheight+' - '+newDog.maxheight,
-                "weight":newDog.minweight+' - '+newDog.maxweight,
-                "lifeSpan":newDog.lifeSpan,
-                "temperament":newDog.temperaments
-              })
-                  .then(res => {
-                
-                  navigate("/home");
-                })
-                .catch(error => {
-                  console.log(error);
-                });
+                // Envio la solicitud a una API que tarda 3 segundos en responder
+                setCreating(true); // establece el estado de "creating" a "true"
+    setTimeout(() => {
+      // Aquí iría el código para enviar el formulario
+      axios.post("/dogs",{
+        "name":newDog.name,
+        "image":newDog.image,
+        "height": newDog.minheight+' - '+newDog.maxheight,
+        "weight":newDog.minweight+' - '+newDog.maxweight,
+        "lifeSpan":newDog.lifeSpan,
+        "temperament":newDog.temperaments
+      })
+          .then(res => {
         
+          navigate("/home");
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+      setCreating(false);
+
+    }, 3000);
   
       // Reiniciar el estado para limpiar el formulario
       setNewDog({
@@ -197,7 +145,7 @@ export default function CreateForm(){
     return(
         <div>
         <h1>Dog Breed Form</h1>
-
+        
         <div className='FormContent'>
             <form onSubmit={handleSubmit}>
             <div className='name'>
@@ -295,16 +243,17 @@ export default function CreateForm(){
 
 
             <button type="submit" value="Create">Create breed</button>
-
+         
             </form>
             <div className='cardPreviusly'>
-            <span className='characteristicPreviusly'>Preview</span>
+              <span className='characteristicPreviusly'>Preview</span>
               <span className='characteristicPreviusly'>{newDog.name}</span>
               <span className='characteristicPreviusly'><img src={newDog.image?newDog.image:imgPreviusly } alt={newDog.name} width="100px" /></span>
               <span className='characteristicPreviusly'>Height: {newDog.minheight}-{newDog.maxheight}</span>
               <span className='characteristicPreviusly'>Weight: {newDog.minweight}-{newDog.maxweight} </span>
               <span className='characteristicPreviusly'>Life Span: {newDog.lifeSpan}</span>
-
+              
+              {creating && <span className='characteristicPreviusly'>Creating race..</span>}
 
             </div>
 
