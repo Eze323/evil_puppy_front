@@ -35,7 +35,7 @@ console.log(temperamentOptions);
     <div className="ContenedorDeFiltros">
       <label>Order by: </label>
   <select className="selectStyle" ref={order} onChange={(e)=>dispatch(orderCards(e.target.value))}>
-      {['Race A-Z', 'Race Z-A','Weight A-Z', 'Weight Z-A'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
+      {['Race A-Z', 'Race Z-A','Min', 'Max'].map((e,i) =>(<option value={e} key={i}>{e}</option>) )}
   </select>
   
   

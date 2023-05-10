@@ -45,10 +45,10 @@ const rootReducer = (state = initialState, action)=>{
                 temperaments:[...action.payload]
             }       
             case FILTER:
-                let filterDogs=[...state.myDogs];
+                
                 return {
                   ...state,
-                  dogBreeds: filterDogs.filter(e => e.temperament && e.temperament.includes(action.payload))
+                  dogBreeds:state.dogBreeds.filter(e => e.temperament && e.temperament.includes(action.payload))
                 }
               
 
@@ -60,7 +60,7 @@ const rootReducer = (state = initialState, action)=>{
             else if(action.payload==='Race Z-A'){
                 orderDogs=state.dogBreeds.sort((a,b)=>a.name<b.name?1:-1);
             }
-            else if(action.payload==='Weight A-Z'){
+            else if(action.payload==='Min'){
                 orderDogs=state.dogBreeds.sort((a,b)=>a.weight>b.weight?1:-1);
             }else{
                 orderDogs=state.dogBreeds.sort((a,b)=>a.weight<b.weight?1:-1);
