@@ -5,6 +5,7 @@
     align-content: space-between;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 15px;
 }
 .temp{
     width: 150px;

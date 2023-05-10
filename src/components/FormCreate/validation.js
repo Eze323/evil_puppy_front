@@ -55,6 +55,9 @@ if (newDog.minheight==='') {
 if(newDog.lifeSpan<0 || newDog.lifeSpan>30){
   errors.lifeSpan='select consistent life years';
 }
+if(newDog.temperaments.length<=0){
+  errors.temperaments='You must select at least one temperament';
+}
 
   return errors;
 }
